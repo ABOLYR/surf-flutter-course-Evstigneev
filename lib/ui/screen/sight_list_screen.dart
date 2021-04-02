@@ -1,50 +1,47 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:places/style/Colors.dart';
+import 'package:places/mocks.dart';
+import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/screen/sight_card.dart';
 
 class SightListScreen extends StatefulWidget {
   @override
   _SightListScreenState createState() => _SightListScreenState();
 }
 
-class _SightListScreenState extends State<SightListScreen> {
+class _SightListScreenState extends State<SightListScreen> { //Screen with list of sights
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PlacesColors.backgroundColor,
+      backgroundColor: white,
       appBar: AppBar(
-        backgroundColor: PlacesColors.backgroundColor,
+        backgroundColor: white,
         elevation: 0,
+        toolbarHeight: 150,
         title: Padding(
             padding: EdgeInsets.only(left: 16, right: 16, top: 64),
-            child: RichText(
-            text: TextSpan(
+            child: Text('Список\nинтересных мест',
               style: TextStyle(
-                color: Colors.black,
+                color: purple,
                 height: 36 / 32,
                 fontSize: 32,
                 fontFamily: 'Roboto',
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w700,
               ),
-              children: [
-                TextSpan(text: 'C',
-                  style: TextStyle(
-                    color: Colors.green,
-                  ),
-                ),
-                TextSpan(text: 'писок\n',
-                ),
-                TextSpan(text: 'и',
-                  style: TextStyle(
-                    color: Colors.yellow,
-                  ),
-                ),
-                TextSpan(text: 'нтересных мест',),
-              ],
-            ),
-          ),
+            )
         ),
-        toolbarHeight: 150,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SightCard(mocks[0]),
+            SightCard(mocks[1]),
+            SightCard(mocks[2]),
+          ],
+        ),
       ),
     );
   }

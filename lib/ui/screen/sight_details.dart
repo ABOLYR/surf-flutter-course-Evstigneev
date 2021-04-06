@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/style/Colors.dart';
+import 'package:places/ui/res/colors.dart';
 
 class SightDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PlacesColors.backgroundColor,
+      backgroundColor: white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
             width: 361,
             height: 360,
-            color: Colors.blue,
+            color: blue,
             child: Align(
               alignment: Alignment.topLeft,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
+                  color: white,
                 ),
                 width: 32,
                 height: 32,
@@ -43,7 +43,7 @@ class SightDetails extends StatelessWidget {
               children: [
                 Text(mocks[0].name,
                   style: TextStyle(
-                    color: Color(0xff3B3E5B),
+                    color: darkPurple,
                     height: 28.8 / 24,
                     fontSize: 24,
                     fontFamily: 'Roboto',
@@ -55,7 +55,7 @@ class SightDetails extends StatelessWidget {
                   children: [
                     Text('Архитектурная доминанта',
                       style: TextStyle(
-                        color: Color(0xff3B3E5B),
+                        color: darkPurple,
                         height: 18 / 14,
                         fontSize: 14,
                         fontFamily: 'Roboto',
@@ -67,7 +67,7 @@ class SightDetails extends StatelessWidget {
                       padding: EdgeInsets.only(left: 16),
                       child: Text('Закрыто до 9:00',
                         style: TextStyle(
-                          color: Color(0xff7C7E92),
+                          color: grey,
                           height: 18 / 14,
                           fontSize: 14,
                           fontFamily: 'Roboto',
@@ -82,7 +82,7 @@ class SightDetails extends StatelessWidget {
                     padding: EdgeInsets.only(top: 24),
                     child: Text(mocks[0].details,
                       style: TextStyle(
-                        color: Color(0xff3B3E5B),
+                        color: darkPurple,
                         height: 18 / 14,
                         fontSize: 14,
                         fontFamily: 'Roboto',
@@ -98,7 +98,7 @@ class SightDetails extends StatelessWidget {
                     child: SizedBox(
                       height: 48,
                       child: RaisedButton(
-                        color: Color(0xff4CAF50),
+                        color: green,
                           onPressed: () { },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -106,13 +106,13 @@ class SightDetails extends StatelessWidget {
                               Container(
                                 width: 20,
                                 height: 18,
-                                color: Colors.white,
+                                color: white,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Text('построить маршрут',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: white,
                                     height: 18 / 14,
                                     fontSize: 14,
                                     fontFamily: 'Roboto',
@@ -131,7 +131,7 @@ class SightDetails extends StatelessWidget {
                   padding: EdgeInsets.only(top: 24),
                   child: Divider(
                     height: 0.8,
-                    color: Color(0x907c7e92),
+                    color: grey,
                   ),
                 ),
                 Padding(
@@ -145,7 +145,7 @@ class SightDetails extends StatelessWidget {
                           flex: 1,
                           child: RaisedButton(
                               elevation: 0,
-                              color: PlacesColors.backgroundColor,
+                              color: white,
                               onPressed: () { },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -154,11 +154,11 @@ class SightDetails extends StatelessWidget {
                                     width: 22,
                                     height: 19,
                                     margin: EdgeInsets.only(right: 9),
-                                    color: Color(0x907c7e92),
+                                    color: grey,
                                   ),
                                   Text('Запланировать',
                                     style: TextStyle(
-                                      color: Color(0x907c7e92),
+                                      color: grey,
                                       height: 18 / 14,
                                       fontSize: 14,
                                       fontFamily: 'Roboto',
@@ -174,7 +174,7 @@ class SightDetails extends StatelessWidget {
                           flex: 1,
                           child: RaisedButton(
                               elevation: 0,
-                              color: PlacesColors.backgroundColor,
+                              color: white,
                               onPressed: () { },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -183,11 +183,11 @@ class SightDetails extends StatelessWidget {
                                     width: 20,
                                     height: 18,
                                     margin: EdgeInsets.only(right: 9),
-                                    color: Color(0xff3B3E5B),
+                                    color: darkPurple,
                                   ),
                                   Text('В Избранное',
                                     style: TextStyle(
-                                      color: Color(0xff3B3E5B),
+                                      color: darkPurple,
                                       height: 18 / 14,
                                       fontSize: 14,
                                       fontFamily: 'Roboto',

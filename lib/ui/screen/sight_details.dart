@@ -17,11 +17,14 @@ class SightDetails extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.network(this.sight.url,
+              Container(
                 height: 360,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                loadingBuilder: sightImagePreloader,
+                child: Image.network(this.sight.url,
+                  height: double.infinity,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  loadingBuilder: sightImagePreloader,
+                ),
               ),
               Align(
                   alignment: Alignment.topLeft,

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/components/sight_image_preloader.dart';
 import 'package:places/ui/res/colors.dart';
 
 class SightDetails extends StatelessWidget {
+  final Sight sight;
+
+  SightDetails(this.sight);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,31 +15,36 @@ class SightDetails extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            width: 361,
-            height: 360,
-            color: blue,
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: white,
-                ),
-                width: 32,
-                height: 32,
-                margin: EdgeInsets.only(top: 36, left: 16,),
-                child: Center(
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      size: 10,
+          Stack(
+            children: [
+              Image.network(this.sight.url,
+                height: 360,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                loadingBuilder: sightImagePreloader,
+              ),
+              Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: white,
                     ),
-                    onPressed: () { },
-                  ),
-                ),
-              )
-            ),
+                    width: 32,
+                    height: 32,
+                    margin: EdgeInsets.only(top: 36, left: 16,),
+                    child: Center(
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          size: 10,
+                        ),
+                        onPressed: () { },
+                      ),
+                    ),
+                  )
+              ),
+            ],
           ),
           Container(
             padding: EdgeInsets.only(top: 16, left: 16, right: 16),

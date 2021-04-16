@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 const Color white = Colors.white,
     whiteSmoke = Color(0xfff5f5f5),
     blue = Colors.blue,
+    visitingScreenSelectedColor = Color(0xff252849),
+    selectedTabColor = Color(0xff3B3E5B),
     green = Colors.green,
     yellow = Colors.yellow,
     purple = Color(0xff3b3e5b),

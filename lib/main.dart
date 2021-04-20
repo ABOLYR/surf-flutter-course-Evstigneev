@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
+import 'package:places/ui/screen/visiting_screen.dart';
 
 void main() {
   runApp(App());
@@ -9,7 +10,6 @@ void main() {
 
 
 class App extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,48 +18,15 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      home: SightDetails(mocks[0]),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyFirstWidgetLess extends StatelessWidget {
-  int count = 0;
-  // Type getContextType() {
-  //   return context.runtimeType;
-  // }
+class MyHomePage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    count+= 1;
-    print(count);
-    return Container(
-      child: Center(
-        child: Text("Hello!"),
-      ),
-    );
-  }
+  State<StatefulWidget> createState() => VisitingScreen();
 }
 
-class MyFirstWidgetFul extends StatefulWidget {
-  @override
-  _MyFirstWidgetFulState createState() => _MyFirstWidgetFulState();
-}
-
-class _MyFirstWidgetFulState extends State<MyFirstWidgetFul> {
-  int count = 0;
-  Type getContextType() {
-    return context.runtimeType;
-  }
-  @override
-  Widget build(BuildContext context) {
-    count+= 1;
-    print(count);
-    return Container(
-      child: Center(
-        child: Text("Hello!"),
-      ),
-    );
-  }
-}
 
 

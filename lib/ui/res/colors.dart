@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 const Color white = Colors.white,
@@ -11,4 +10,6 @@ const Color white = Colors.white,
     yellow = Colors.yellow,
     purple = Color(0xff3b3e5b),
     darkPurple = Color(0xff3B3E5B),
-    grey = Color(0xff7C7E92);
+    grey = Color(0xff7C7E92),
+    backgroundDark = Color(0xff21222C),
+    secondaryHeaderColorDark = Color(0xff1A1A20);

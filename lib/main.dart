@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/screen/res/themes.dart';
 import 'package:places/ui/screen/sight_details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/screen/visiting_screen.dart';
@@ -14,11 +15,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'title',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-
-      home: MyHomePage(),
+      theme:
+        darkTheme,
+        //lightTheme,
+      home:
+        SightDetails(mocks[1]),
+        //SightListScreen(),
+        //MyHomePage(),
     );
   }
 }

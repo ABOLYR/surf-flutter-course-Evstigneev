@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/res/colors.dart';
 
 class SightCardAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
@@ -24,14 +23,7 @@ class _SightCardAppBarState extends State<SightCardAppBar> { //Custom Appbar for
         'Список\nинтересных мест',
         textAlign: TextAlign.start,
         maxLines: 2,
-        style: TextStyle(
-          color: purple,
-          height: 36 / 32,
-          fontSize: 32,
-          fontFamily: 'Roboto',
-          fontStyle: FontStyle.normal,
-          fontWeight: FontWeight.w700,
-        ),
+        style: Theme.of(context).textTheme.headline3,
       ),
     );
   }

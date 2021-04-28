@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/components/sight_image_preloader.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/style.dart';
 
 class VisitingSightCard extends StatelessWidget { //Visiting sight card template
   final Sight sight;
@@ -52,16 +53,13 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                               child: (visited)
                                   ? Icon(
                                       Icons.share,
-                                      color: white
                                     )
                                   : Icon(
                                       CupertinoIcons.calendar,
-                                      color: white,
                                     )
                           ),
                           Icon(
                               Icons.close,
-                              color: white,
                           ),
                         ]
                       ),
@@ -73,14 +71,7 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                   child: Container(
                     margin: EdgeInsets.only(left: 16, top: 16),
                     child: Text(sight.type,
-                      style: TextStyle(
-                        color: white,
-                        height: 18 / 14,
-                        fontSize: 14,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: subtitle1TextStyle.copyWith(color: white),
                     ),
                   ),
                 ),
@@ -92,7 +83,7 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(12),
                     bottomRight: Radius.circular(12)),
-                color: whiteSmoke,
+                color: Theme.of(context).secondaryHeaderColor,
               ),
               height: 92,
               child: Padding(
@@ -106,14 +97,7 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                     Text(sight.name,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: TextStyle(
-                        color: darkPurple,
-                        height: 20 / 16,
-                        fontSize: 16,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                     SizedBox(
                       height: 2,
@@ -121,28 +105,14 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                     Text(scheduledDate,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(
-                        color: (visited) ? grey : green,
-                        height: 18 / 14,
-                        fontSize: 14,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle2.copyWith(color: (visited) ? grey : green),
                     ),
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Text(closedTime,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
-                        style: TextStyle(
-                          color: grey,
-                          height: 18 / 14,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle2,
                       ),
                     )
                   ],

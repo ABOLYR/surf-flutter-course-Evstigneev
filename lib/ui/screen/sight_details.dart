@@ -8,10 +8,11 @@ class SightDetails extends StatelessWidget {
   final Sight sight;
 
   SightDetails(this.sight);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
+      backgroundColor: Theme.of(context).primaryColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -31,7 +32,7 @@ class SightDetails extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: white,
+                      color: Theme.of(context).primaryColor,
                     ),
                     width: 32,
                     height: 32,
@@ -41,6 +42,7 @@ class SightDetails extends StatelessWidget {
                         icon: Icon(
                           Icons.arrow_back_ios,
                           size: 10,
+                          color: Theme.of(context).primaryIconTheme.color,
                         ),
                         onPressed: () { },
                       ),
@@ -55,38 +57,17 @@ class SightDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(mocks[0].name,
-                  style: TextStyle(
-                    color: darkPurple,
-                    height: 28.8 / 24,
-                    fontSize: 24,
-                    fontFamily: 'Roboto',
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: Theme.of(context).textTheme.headline6,
                 ),
                 Row(
                   children: [
                     Text('Архитектурная доминанта',
-                      style: TextStyle(
-                        color: darkPurple,
-                        height: 18 / 14,
-                        fontSize: 14,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle1,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 16),
                       child: Text('Закрыто до 9:00',
-                        style: TextStyle(
-                          color: grey,
-                          height: 18 / 14,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle2,
                       ),
                     ),
                   ],
@@ -94,14 +75,7 @@ class SightDetails extends StatelessWidget {
                 Padding(
                     padding: EdgeInsets.only(top: 24),
                     child: Text(mocks[0].details,
-                      style: TextStyle(
-                        color: darkPurple,
-                        height: 18 / 14,
-                        fontSize: 14,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.bodyText1,
                     )
                 ),
                 Padding(
@@ -124,14 +98,7 @@ class SightDetails extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Text('построить маршрут',
-                                  style: TextStyle(
-                                    color: white,
-                                    height: 18 / 14,
-                                    fontSize: 14,
-                                    fontFamily: 'Roboto',
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                                  style: Theme.of(context).textTheme.subtitle1.copyWith(color: white),
                                 ),
                               ),
                             ],
@@ -156,9 +123,14 @@ class SightDetails extends StatelessWidget {
                       children: [
                         Expanded(
                           flex: 1,
-                          child: RaisedButton(
-                              elevation: 0,
-                              color: white,
+                          child: TextButton(
+                              style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                                        (Set<MaterialState> states) {
+                                      return Theme.of(context).primaryColor;
+                                    },
+                                  ),
+                              ),
                               onPressed: () { },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -170,14 +142,7 @@ class SightDetails extends StatelessWidget {
                                     color: grey,
                                   ),
                                   Text('Запланировать',
-                                    style: TextStyle(
-                                      color: grey,
-                                      height: 18 / 14,
-                                      fontSize: 14,
-                                      fontFamily: 'Roboto',
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w400,
-                                    ),
+                                    style: Theme.of(context).textTheme.bodyText1.copyWith(color: grey),
                                   ),
                                 ],
                               )
@@ -185,9 +150,14 @@ class SightDetails extends StatelessWidget {
                         ),
                         Expanded(
                           flex: 1,
-                          child: RaisedButton(
-                              elevation: 0,
-                              color: white,
+                          child: TextButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    return Theme.of(context).primaryColor;
+                                  },
+                                ),
+                              ),
                               onPressed: () { },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -199,14 +169,8 @@ class SightDetails extends StatelessWidget {
                                     color: darkPurple,
                                   ),
                                   Text('В Избранное',
-                                    style: TextStyle(
-                                      color: darkPurple,
-                                      height: 18 / 14,
-                                      fontSize: 14,
-                                      fontFamily: 'Roboto',
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.w400,
-                                    ),),
+                                    style: Theme.of(context).textTheme.bodyText1.copyWith(color: darkPurple),
+                                  ),
                                 ],
                               )
                           ),

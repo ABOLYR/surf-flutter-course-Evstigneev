@@ -49,14 +49,7 @@ class SightCard extends StatelessWidget { //Sight card like on SightListScreen
                     child: Container(
                       margin: EdgeInsets.only(left: 16, top: 16),
                       child: Text(sight.type,
-                        style: TextStyle(
-                          color: white,
-                          height: 18 / 14,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style: Theme.of(context).textTheme.subtitle1.copyWith(color: white),
                       ),
                     ),
                   ),
@@ -68,7 +61,7 @@ class SightCard extends StatelessWidget { //Sight card like on SightListScreen
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(12),
                     bottomRight: Radius.circular(12)),
-                color: whiteSmoke,
+                color: Theme.of(context).secondaryHeaderColor,
               ),
               height: 92,
               child: Padding(
@@ -82,14 +75,7 @@ class SightCard extends StatelessWidget { //Sight card like on SightListScreen
                     Text(sight.name,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: TextStyle(
-                        color: darkPurple,
-                        height: 20 / 16,
-                        fontSize: 16,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                     SizedBox(
                       height: 2,
@@ -97,14 +83,7 @@ class SightCard extends StatelessWidget { //Sight card like on SightListScreen
                     Text(sight.details,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: TextStyle(
-                        color: grey,
-                        height: 18 / 14,
-                        fontSize: 14,
-                        fontFamily: 'Roboto',
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle2
                     ),
                   ],
                 ),

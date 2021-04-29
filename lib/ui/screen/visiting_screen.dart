@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/components/tab_bar_indicator.dart';
 import 'package:places/ui/components/visiting_sight_card.dart';
-import 'package:places/ui/res/colors.dart';
 
 class VisitingScreen extends State with SingleTickerProviderStateMixin {
   TabController tabController;
@@ -26,16 +25,8 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: white,
         title: Text('Избранное',
-          style: TextStyle(
-            color: visitingScreenSelectedColor,
-            height: 24 / 18,
-            fontSize: 18,
-            fontFamily: 'Roboto',
-            fontStyle: FontStyle.normal,
-            fontWeight: FontWeight.w500,
-          ),
+          style: Theme.of(context).textTheme.headline5,
         ),
         centerTitle: true,
         bottom: PreferredSize(
@@ -45,7 +36,7 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
             width: 328,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
-              color: whiteSmoke,
+              color: Theme.of(context).unselectedWidgetColor,
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,9 +79,9 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
               ),
             )),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        selectedItemColor: Theme.of(context).selectedRowColor,
         currentIndex: 1,
-        selectedItemColor: visitingScreenSelectedColor,
-        unselectedItemColor: grey,
         items: [
           BottomNavigationBarItem(
               icon: Icon(

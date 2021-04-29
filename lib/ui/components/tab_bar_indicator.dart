@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/res/colors.dart';
 
 class TabBarIndicator extends StatelessWidget {
   final TabController tabController;
@@ -15,14 +14,14 @@ class TabBarIndicator extends StatelessWidget {
       width: 164,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
-        color: (selected) ? selectedTabColor : whiteSmoke,
+        color: (selected) ? Theme.of(context).selectedRowColor : Theme.of(context).unselectedWidgetColor,
       ),
       child: Align(
         alignment: Alignment.center,
         child: Text(
           label,
           style: TextStyle(
-            color: (selected) ? white : grey,
+            color: (selected) ? Theme.of(context).unselectedWidgetColor : Theme.of(context).selectedRowColor,
             height: 18 / 14,
             fontSize: 14,
             fontFamily: 'Roboto',

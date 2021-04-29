@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/res/colors.dart';
-import 'package:places/ui/screen/sight_card.dart';
-import 'package:places/ui/screen/sight_card_appBar.dart';
+import 'package:places/ui/components/sight_card.dart';
+import 'package:places/ui/components/sight_card_appBar.dart';
 
 class SightListScreen extends StatefulWidget {
   @override
@@ -14,7 +13,6 @@ class _SightListScreenState extends State<SightListScreen> { //Screen with list 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: SightCardAppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),

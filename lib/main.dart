@@ -16,11 +16,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'title',
       theme:
-        darkTheme,
-        //lightTheme,
+        //darkTheme,
+        lightTheme,
       home:
-        SightDetails(mocks[1]),
-        //SightListScreen(),
+        //SightDetails(mocks[1]),
+        SightListScreen(),
         //MyHomePage(),
     );
   }

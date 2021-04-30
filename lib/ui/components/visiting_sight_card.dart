@@ -48,19 +48,30 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                       height: 20,
                       child: Row(
                         children: [
-                          Padding(
-                              padding: EdgeInsets.only(right: 23),
-                              child: (visited)
-                                  ? Icon(
-                                      Icons.share,
-                                    )
-                                  : Icon(
-                                      CupertinoIcons.calendar,
-                                    )
-                          ),
-                          Icon(
-                              Icons.close,
-                          ),
+                          (visited)
+                            ? IconButton(
+                                padding: EdgeInsets.all(0),
+                                onPressed: () {
+                                  print('Share button pressed');
+                                },
+                                icon: Icon(Icons.share),
+                              )
+                            : IconButton(
+                                padding: EdgeInsets.all(0),
+                                onPressed: () {
+                                  print('Schedule button pressed');
+                                },
+                                icon: Icon(CupertinoIcons.calendar),
+                              ),
+                          Flexible(
+                            child: IconButton(
+                              padding: EdgeInsets.all(0),
+                              onPressed: () {
+                                print('Delete button pressed');
+                              },
+                              icon: Icon(Icons.close),
+                            ),
+                          )
                         ]
                       ),
                     ),

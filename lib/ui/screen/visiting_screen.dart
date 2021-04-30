@@ -42,7 +42,14 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 for(int i = 0; i < tabController.length; i++)
-                TabBarIndicator(tabController, selected: (tabController.index == i) ? true : false, label: tabs[i],)
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      tabController.index = i;
+                    });
+                  },
+                    child: TabBarIndicator(tabController, selected: (tabController.index == i) ? true : false, label: tabs[i],)
+                )
               ],
             ),
           ),
@@ -79,6 +86,9 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
               ),
             )),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          print('Switch to tab $index');
+        },
         backgroundColor: Theme.of(context).primaryColor,
         selectedItemColor: Theme.of(context).selectedRowColor,
         currentIndex: 1,

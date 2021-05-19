@@ -6,7 +6,8 @@ class Sight {
   final String url;
   final String details;
   final String type;
+  final Map<String, String> meta;
 
-  Sight(this.name, this.lat, this.lon, this.url, this.details, this.type);
+  Sight(this.name, this.lat, this.lon, this.url, this.details, this.type, this.meta);
 
 }

@@ -25,11 +25,18 @@ final lightTheme = ThemeData(
     headline5: headline5TextStyle,
     headline4: headline4TextStyle,
     headline3: headline3TextStyle, //Sight list appBar
+    headline1: headline1TextStyle,
     subtitle1: subtitle1TextStyle, //Sight type
     subtitle2: subtitle2TextStyle,
     bodyText1: bodyText1TextStyle,
   ),
   primaryIconTheme: primaryIconTheme,
+  sliderTheme: SliderThemeData(
+    activeTrackColor: filterScreenLightColor,
+    inactiveTrackColor: grey,
+    thumbColor: white,
+    trackHeight: 2,
+  )
 );
 
 final darkTheme = ThemeData(

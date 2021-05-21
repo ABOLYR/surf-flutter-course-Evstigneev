@@ -45,7 +45,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           ListTile(
             title: Text(TextContent.settingTitle[1], style: Theme.of(context).textTheme.headline4.copyWith(fontWeight: FontWeight.w400),), //Смотреть туториал
-            trailing: Icon(Icons.info_outline, color: filterScreenLightColor,)
+            trailing: IconButton(
+              icon: Icon(Icons.info_outline),
+              color: filterScreenLightColor,
+              onPressed: () {
+                print('Info Button pressed');
+              },
+            )
           ),
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/style.dart';
 
+final ChangeNotifier changeNotifier = ChangeNotifier();
+
 final lightTheme = ThemeData(
   primaryColor: white,
   secondaryHeaderColor: whiteSmoke,
@@ -36,6 +38,10 @@ final lightTheme = ThemeData(
     inactiveTrackColor: grey,
     thumbColor: white,
     trackHeight: 2,
+  ),
+  switchTheme: SwitchThemeData(
+    thumbColor: MaterialStateProperty.all(white),
+    trackColor: MaterialStateProperty.all(grey),
   )
 );
 
@@ -67,6 +73,17 @@ final darkTheme = ThemeData(
     bodyText1: bodyText1TextStyle.copyWith(color: white),
   ),
   primaryIconTheme: primaryIconTheme.copyWith(color: white),
+  sliderTheme: SliderThemeData(
+    activeTrackColor: filterScreenLightColor,
+    inactiveTrackColor: grey,
+    thumbColor: white,
+    trackHeight: 2,
+  ),
+  dividerColor: grey.withOpacity(0.8),
+  switchTheme: SwitchThemeData(
+    thumbColor: MaterialStateProperty.all(white),
+    trackColor: MaterialStateProperty.all(filterScreenLightColor),
+  )
 );
 
 const IconThemeData

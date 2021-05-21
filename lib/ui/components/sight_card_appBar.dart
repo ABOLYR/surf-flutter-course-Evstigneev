@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/res/text_content.dart';
 
 class SightCardAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
@@ -20,7 +21,7 @@ class _SightCardAppBarState extends State<SightCardAppBar> { //Custom Appbar for
         right: 16,
       ),
       child: Text(
-        'Список\nинтересных мест',
+        TextContent.appBarTitle[0], //Список\nинтересных мест
         textAlign: TextAlign.start,
         maxLines: 2,
         style: Theme.of(context).textTheme.headline3,

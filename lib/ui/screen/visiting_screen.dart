@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/components/bottom_navigation_bar.dart';
 import 'package:places/ui/components/tab_bar_indicator.dart';
 import 'package:places/ui/components/visiting_sight_card.dart';
 
@@ -85,26 +86,7 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
                 ],
               ),
             )),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
-          print('Switch to tab $index');
-        },
-        backgroundColor: Theme.of(context).primaryColor,
-        selectedItemColor: Theme.of(context).selectedRowColor,
-        currentIndex: 1,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(
-                  CupertinoIcons.square_list,
-              ),
-              label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.heart_fill),
-            label: '',
-          )
-        ],
-      ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
   

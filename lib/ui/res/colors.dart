@@ -13,4 +13,5 @@ const Color white = Colors.white,
     grey = Color(0xff7C7E92),
     backgroundDark = Color(0xff21222C),
     secondaryHeaderColorDark = Color(0xff1A1A20),
-    filterScreenLightColor = Color(0xff4CAF50);
+    filterScreenLightColor = Color(0xff4CAF50),
+    splashColor = Color(0xffc4c4c4);

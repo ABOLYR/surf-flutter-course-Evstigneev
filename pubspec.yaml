@@ -29,7 +29,9 @@ flutter:
   assets:
     - res/
     - res/icons/LikeIcon.png
+    - res/icons/LikeIconFull.png
     - res/icons/LikeIconWhite.png
+    - res/icons/LikeIconWhiteFull.png
     - res/icons/BackArrow.png
     - res/icons/RouteIcon.png
     - res/icons/ScheduleIcon.png

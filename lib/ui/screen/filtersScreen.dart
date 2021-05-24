@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/services/nearby_sights.dart';
 import 'package:places/ui/components/filter/distance_slider.dart';
-import 'package:places/ui/components/filter_type_icon.dart';
+import 'package:places/ui/components/filter/filter_type_icon.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/style.dart';
 import 'package:places/mocks.dart';

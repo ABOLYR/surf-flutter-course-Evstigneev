@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/mocks.dart';
@@ -39,12 +40,10 @@ class SightDetails extends StatelessWidget {
                     margin: EdgeInsets.only(top: 36, left: 16,),
                     child: Center(
                       child: IconButton(
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          size: 10,
-                          color: Theme.of(context).primaryIconTheme.color,
-                        ),
-                        onPressed: () { },
+                        icon: Image.asset('res/icons/BackArrow.png'),
+                        onPressed: () {
+                          print('Back button pressed');
+                        },
                       ),
                     ),
                   )
@@ -84,17 +83,21 @@ class SightDetails extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: SizedBox(
                       height: 48,
-                      child: RaisedButton(
-                        color: green,
-                          onPressed: () { },
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                return green;
+                              },
+                            ),
+                          ),
+                          onPressed: () {
+                            print('Route button pressed');
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                width: 20,
-                                height: 18,
-                                color: white,
-                              ),
+                              Image.asset('res/icons/RouteIcon.png'),
                               Padding(
                                 padding: EdgeInsets.only(left: 10),
                                 child: Text('построить маршрут',
@@ -131,15 +134,15 @@ class SightDetails extends StatelessWidget {
                                     },
                                   ),
                               ),
-                              onPressed: () { },
+                              onPressed: () {
+                                print('Schedule Button button');
+                              },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width: 22,
-                                    height: 19,
-                                    margin: EdgeInsets.only(right: 9),
-                                    color: grey,
+                                      margin: EdgeInsets.only(right: 9),
+                                      child: Icon(CupertinoIcons.calendar),
                                   ),
                                   Text('Запланировать',
                                     style: Theme.of(context).textTheme.bodyText1.copyWith(color: grey),
@@ -158,15 +161,15 @@ class SightDetails extends StatelessWidget {
                                   },
                                 ),
                               ),
-                              onPressed: () { },
+                              onPressed: () {
+                                print('Add to Favorite button pressed');
+                              },
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width: 20,
-                                    height: 18,
-                                    margin: EdgeInsets.only(right: 9),
-                                    color: darkPurple,
+                                      margin: EdgeInsets.only(right: 9),
+                                      child: Image.asset('res/icons/LikeIcon.png')
                                   ),
                                   Text('В Избранное',
                                     style: Theme.of(context).textTheme.bodyText1.copyWith(color: darkPurple),

@@ -36,13 +36,14 @@ class SightCard extends StatelessWidget { //Sight card like on SightListScreen
                     ),
                   ),
                   Align(
-                      alignment: Alignment.topRight,
-                      child: Container( //TODO Icon heart
-                        margin: EdgeInsets.only(right: 18, top: 19),
-                        color: white,
-                        width: 20,
-                        height: 18,
-                      )
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                      splashRadius: 20.0,
+                      onPressed: () {
+                        print('Like icon pressed');
+                      },
+                      icon: Image.asset('res/icons/LikeIconWhite.png'),
+                    ),
                   ),
                   Align( //Type string
                     alignment: Alignment.topLeft,

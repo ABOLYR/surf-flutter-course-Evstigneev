@@ -40,8 +40,8 @@ class _AppState extends State<App> {
         //SightDetails(mocks[1]),
         //SightListScreen(),
         //MyHomePage(),
-        //FiltersScreen(),
-        SettingsScreen(),
+        FiltersScreen(),
+        //SettingsScreen(),
     );
   }
 }

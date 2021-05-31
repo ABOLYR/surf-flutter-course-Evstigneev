@@ -34,6 +34,22 @@ const TextStyle
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w700,
   ),
+  headline2TextStyle = TextStyle(
+    color: filterScreenLightColor,
+    height: 20 / 16,
+    fontSize: 16,
+    fontFamily: 'Roboto',
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w500,
+  ),
+  headline1TextStyle = TextStyle(
+    color: grey,
+    height: 16 / 12,
+    fontSize: 12,
+    fontFamily: 'Roboto',
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w400,
+  ),
   subtitle1TextStyle = TextStyle( //Sight type
     color: darkPurple,
     height: 18 / 14,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/screen/FiltersScreen.dart';
 import 'package:places/ui/screen/res/themes.dart';
 import 'package:places/ui/screen/sight_details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
@@ -20,8 +21,9 @@ class App extends StatelessWidget {
         lightTheme,
       home:
         //SightDetails(mocks[1]),
-        SightListScreen(),
+        //SightListScreen(),
         //MyHomePage(),
+        FiltersScreen(),
     );
   }
 }

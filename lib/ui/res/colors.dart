@@ -12,4 +12,5 @@ const Color white = Colors.white,
     darkPurple = Color(0xff3B3E5B),
     grey = Color(0xff7C7E92),
     backgroundDark = Color(0xff21222C),
-    secondaryHeaderColorDark = Color(0xff1A1A20);
+    secondaryHeaderColorDark = Color(0xff1A1A20),
+    filterScreenLightColor = Color(0xff4CAF50);

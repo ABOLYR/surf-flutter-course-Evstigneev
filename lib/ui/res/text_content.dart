@@ -9,4 +9,12 @@ class TextContent {
     'Темная тема',
     'Смотреть туториал',
   ];
+  static const List<String> filtersTitle = [
+    'Категории',
+    'Расстояние',
+  ];
+  static const List<String> filtersButtons = [
+    'Очистить',
+    'Показать'
+  ];
 }

@@ -3,6 +3,7 @@ import 'package:places/domain/sight.dart';
 import 'package:places/services/nearby_sights.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/style.dart';
+import 'package:places/ui/res/text_content.dart';
 
 class DistanceSlider extends StatefulWidget {
   final ValueChanged<List<Sight>> onChangeEnd;
@@ -37,7 +38,7 @@ class _DistanceSliderState extends State<DistanceSlider> {
               children: [
                 Expanded(
                   child: Container(
-                    child: Text("Расстояние",
+                    child: Text(TextContent.filtersTitle[1],
                       style: headline2TextStyle.copyWith(fontWeight: FontWeight.w400),
                     ),
                   ),

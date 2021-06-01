@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/services/nearby_sights.dart';
-import 'package:places/ui/components/filter/distance_slider.dart';
-import 'package:places/ui/components/filter/filter_type_icon.dart';
-import 'package:places/ui/res/colors.dart';
-import 'package:places/ui/res/style.dart';
+import 'package:places/ui/components/filter/appbar.dart';
+import 'package:places/ui/components/filter/list_view.dart';
+import 'package:places/ui/components/filter/main_button.dart';
 import 'package:places/mocks.dart';
 
 class FiltersScreen extends StatefulWidget {
@@ -68,123 +67,55 @@ class _FiltersScreenState extends State<FiltersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
-        elevation: 0,
-        leading: Container(
-          margin: EdgeInsets.only(left: 16),
-          child: InkWell(
-            onTap: () {
-              print('Back');
-            },
-              child: Image.asset("res/icons/BackArrow.png")
-          ),
-        ),
-        actions: [
-          Container(
-            margin: EdgeInsets.only(right: 16),
-            child: TextButton(
-                onPressed: () {
-                  for (int i = 0; i < checked.length; i++) {
-                    checked[i] = false;
-                  }
-                  setState(() {
-                    selectedTypesList = [];
-                    selectedSights = filterSelection(sightsNearby, selectedTypesList);
-                  });
-                },
-              child: Text(
-                'Очистить',
-                style: headline2TextStyle,
-              ),
-            ),
-          )
-        ],
+      appBar: FiltersScreenAppBar(
+        height: AppBar().preferredSize.height,
+        onTap: () {
+          for (int i = 0; i < checked.length; i++) {
+            checked[i] = false;
+          }
+          setState(() {
+            selectedTypesList = [];
+            selectedSights = filterSelection(sightsNearby, selectedTypesList);
+          });
+        }
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 24),
         child: Column(
           children: [
-            Expanded(
-              child: ListView(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 16),
-                    child: Text('Категории',
-                      style: headline1TextStyle,
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 24),
-                    padding: EdgeInsets.symmetric(horizontal: 40.5),
-                    child: GridView.builder(
-                      itemCount: type.length,
-                      shrinkWrap: true,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          childAspectRatio: 0.9,
-                        ),
-                        itemBuilder: (BuildContext context, index) {
-                          return InkWell(
-                              onTap: () {
-                                if (!checked[index]) {
-                                  setState(() {
-                                    checked[index] = true;
-                                    selectedTypesList.add(type[index]);
-                                  });
-                                }else{
-                                  setState(() {
-                                    checked[index] = false;
-                                    selectedTypesList.removeWhere((element) => element == type[index]);
-                                  });
-                                }
-                                setState(() {
-                                  selectedSights = filterSelection(sightsNearby, selectedTypesList);
-                                });
-                              },
-                              child: FilterCategoryIcon( typeName[index], type[index], checked[index])
-                          );
-                        },
-                    ),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(top: 56),
-                      child: DistanceSlider(
-                        onChangeEnd: (matches) {
-                          setState(() {
-                            sightsNearby = matches;
-                            selectedSights = filterSelection(sightsNearby, selectedTypesList);
-                          });
-                        },
-                      )
-                  ),
-                ],
-              ),
+            FiltersScreenListView(
+              checked: checked,
+              type: type,
+              typeName: typeName,
+              onTap: (index) {
+                if (!checked[index]) {
+                  setState(() {
+                    checked[index] = true;
+                    selectedTypesList.add(type[index]);
+                  });
+                }else{
+                  setState(() {
+                    checked[index] = false;
+                    selectedTypesList.removeWhere((element) => element == type[index]);
+                  });
+                }
+                setState(() {
+                  selectedSights = filterSelection(sightsNearby, selectedTypesList);
+                });
+              },
+              onChangeEnd: (matches) {
+                setState(() {
+                  sightsNearby = matches;
+                  selectedSights = filterSelection(sightsNearby, selectedTypesList);
+                });
+              },
             ),
-            SafeArea(
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: SizedBox(
-                      width: 328,
-                      height: 48,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: filterScreenLightColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                            )
-                        ),
-                        onPressed: () {
-                          print('Filtered Sights $selectedSights');
-                        },
-                        child: Text('Показать (${selectedSights.length})'),
-                      ),
-                    ),
-                  ),
-                )
-            ),
+            FiltersScreenMainButton(
+              onPressed: () {
+                print('Filtered Sights $selectedSights');
+              },
+              selectedSights: selectedSights,
+            )
           ]
         ),
       ),

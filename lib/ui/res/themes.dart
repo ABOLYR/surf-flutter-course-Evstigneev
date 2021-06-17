@@ -25,8 +25,9 @@ final lightTheme = ThemeData(
   textTheme: TextTheme(
     headline6: headline6TextStyle,
     headline5: headline5TextStyle,
-    headline4: headline4TextStyle,
-    headline3: headline3TextStyle, //Sight list appBar
+    headline4: headline4TextStyle, //Sight list appBar
+    headline3: headline3TextStyle,
+    headline2: headline2TextStyle,
     headline1: headline1TextStyle,
     subtitle1: subtitle1TextStyle, //Sight type
     subtitle2: subtitle2TextStyle,
@@ -42,7 +43,26 @@ final lightTheme = ThemeData(
   switchTheme: SwitchThemeData(
     thumbColor: MaterialStateProperty.all(white),
     trackColor: MaterialStateProperty.all(grey),
-  )
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    hintStyle: headline2TextStyle.copyWith(color: grey, fontWeight: FontWeight.w400),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: green,
+      ),
+      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: 2,
+        color: green,
+      ),
+      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    ),
+  ),
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: visitingScreenSelectedColor,
+  ),
 );
 
 final darkTheme = ThemeData(
@@ -68,6 +88,7 @@ final darkTheme = ThemeData(
     headline5: headline5TextStyle.copyWith(color: white),
     headline4: headline4TextStyle.copyWith(color: white),
     headline3: headline3TextStyle.copyWith(color: white), //Sight list appBar
+    headline2: headline2TextStyle.copyWith(color: white),
     subtitle1: subtitle1TextStyle.copyWith(color: grey), //Sight type
     subtitle2: subtitle2TextStyle,
     bodyText1: bodyText1TextStyle.copyWith(color: white),
@@ -83,7 +104,26 @@ final darkTheme = ThemeData(
   switchTheme: SwitchThemeData(
     thumbColor: MaterialStateProperty.all(white),
     trackColor: MaterialStateProperty.all(filterScreenLightColor),
-  )
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    hintStyle: headline2TextStyle.copyWith(color: white, fontWeight: FontWeight.w400),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: green,
+      ),
+      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        width: 2,
+        color: green,
+      ),
+      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+    ),
+  ),
+  textSelectionTheme: TextSelectionThemeData(
+    cursorColor: visitingScreenSelectedColor,
+  ),
 );
 
 const IconThemeData

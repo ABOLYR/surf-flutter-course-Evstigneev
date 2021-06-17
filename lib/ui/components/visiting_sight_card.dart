@@ -108,7 +108,7 @@ class VisitingSightCard extends StatelessWidget { //Visiting sight card template
                     Text(sight.name,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                     SizedBox(
                       height: 2,

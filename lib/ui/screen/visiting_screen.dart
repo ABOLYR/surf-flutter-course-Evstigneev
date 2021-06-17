@@ -86,7 +86,7 @@ class VisitingScreen extends State with SingleTickerProviderStateMixin {
                 ],
               ),
             )),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(index: 1),
     );
   }
   

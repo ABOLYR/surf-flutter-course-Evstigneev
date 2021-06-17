@@ -72,7 +72,7 @@ class _SightCardState extends State<SightCard> {
                 Padding(
                   padding: EdgeInsets.only(left: 16),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SizedBox(
                         height: 16,
@@ -80,7 +80,8 @@ class _SightCardState extends State<SightCard> {
                       Text(widget.sight.name,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
-                        style: Theme.of(context).textTheme.headline4,
+                        style: Theme.of(context).textTheme.headline2,
+                        textAlign: TextAlign.left,
                       ),
                       SizedBox(
                         height: 2,
@@ -88,7 +89,8 @@ class _SightCardState extends State<SightCard> {
                       Text(widget.sight.details,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
-                        style: Theme.of(context).textTheme.subtitle2
+                        style: Theme.of(context).textTheme.subtitle2,
+                        textAlign: TextAlign.left,
                       ),
                     ],
                   ),

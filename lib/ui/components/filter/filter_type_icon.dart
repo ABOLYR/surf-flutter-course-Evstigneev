@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/paths.dart';
 import 'package:places/ui/res/style.dart';
 
 class FilterCategoryIcon extends StatelessWidget {
@@ -28,13 +29,13 @@ class FilterCategoryIcon extends StatelessWidget {
                     child: Container(
                       color: filterScreenLightColor.withOpacity(0.16),
                       child: Center(
-                          child: Image.asset('res/icons/filters/${type}Icon.png')
+                          child: Image.asset('$filterIconPath/${type}Icon.png')
                       ),
                     ),
                   ),
                 ),
                 (checked)
-                    ? Image.asset('res/icons/filters/checked.png')
+                    ? Image.asset(filterCheckedIcon)
                     : Container()
               ],
             ),

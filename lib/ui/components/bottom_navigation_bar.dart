@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({Key key}) : super(key: key);
+  final int index;
+  const BottomNavBar({this.index = 0, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +13,10 @@ class BottomNavBar extends StatelessWidget {
       },
       backgroundColor: Theme.of(context).primaryColor,
       selectedItemColor: Theme.of(context).selectedRowColor,
-      currentIndex: 2,
+      currentIndex: index,
       items: [
         BottomNavigationBarItem(
-          icon: Icon(
-            CupertinoIcons.square_list,
-          ),
+          icon: Icon(CupertinoIcons.square_list,),
           label: '',
         ),
         BottomNavigationBarItem(

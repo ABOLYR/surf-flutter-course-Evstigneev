@@ -18,15 +18,7 @@ const TextStyle
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w500,
   ),
-  headline4TextStyle = TextStyle(
-    color: darkPurple,
-    height: 20 / 16,
-    fontSize: 16,
-    fontFamily: 'Roboto',
-    fontStyle: FontStyle.normal,
-    fontWeight: FontWeight.w500,
-  ),
-  headline3TextStyle = TextStyle( //Sight list appBar
+  headline4TextStyle = TextStyle( //Sight list appBar
     color: purple,
     height: 36 / 32,
     fontSize: 32,
@@ -34,8 +26,16 @@ const TextStyle
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w700,
   ),
+  headline3TextStyle = TextStyle(
+    color: visitingScreenSelectedColor,
+    height: 20 / 16,
+    fontSize: 16,
+    fontFamily: 'Roboto',
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w400,
+  ),
   headline2TextStyle = TextStyle(
-    color: filterScreenLightColor,
+    color: visitingScreenSelectedColor,
     height: 20 / 16,
     fontSize: 16,
     fontFamily: 'Roboto',

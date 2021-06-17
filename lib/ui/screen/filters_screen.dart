@@ -4,8 +4,10 @@ import 'package:places/domain/sight.dart';
 import 'package:places/services/nearby_sights.dart';
 import 'package:places/ui/components/filter/appbar.dart';
 import 'package:places/ui/components/filter/list_view.dart';
-import 'package:places/ui/components/filter/main_button.dart';
 import 'package:places/mocks.dart';
+import 'package:places/ui/components/main_action_button.dart';
+import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_content.dart';
 
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({Key key}) : super(key: key);
@@ -110,12 +112,11 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 });
               },
             ),
-            FiltersScreenMainButton(
-              onPressed: () {
-                print('Filtered Sights $selectedSights');
-              },
-              selectedSights: selectedSights,
-            )
+            MainActionButton(
+              onPressed: () => print('Filtered Sights $selectedSights'),
+              content: Text('${TextContent.filtersButton[1]} (${selectedSights.length})'),
+              color: filterScreenLightColor,
+            ),
           ]
         ),
       ),

@@ -30,7 +30,7 @@ class FiltersScreenAppBar extends StatelessWidget implements PreferredSizeWidget
           child: TextButton(
             onPressed: () => onTap(),
             child: Text(
-              TextContent.filtersButtons[0],
+              TextContent.filtersButton[0],
               style: headline2TextStyle,
             ),
           ),

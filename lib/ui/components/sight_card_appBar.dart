@@ -24,7 +24,7 @@ class _SightCardAppBarState extends State<SightCardAppBar> { //Custom Appbar for
         TextContent.appBarTitle[0], //Список\nинтересных мест
         textAlign: TextAlign.start,
         maxLines: 2,
-        style: Theme.of(context).textTheme.headline3,
+        style: Theme.of(context).textTheme.headline4,
       ),
     );
   }

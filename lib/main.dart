@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/screen/filtersScreen.dart';
+import 'package:places/ui/screen/add_sight/category.dart';
+import 'package:places/ui/screen/add_sight/add_sight_screen.dart';
+import 'package:places/ui/screen/filters_screen.dart';
 import 'package:places/ui/res/themes.dart';
 import 'package:places/ui/screen/settings_screen.dart';
 import 'package:places/ui/screen/sight_details.dart';
@@ -38,10 +40,12 @@ class _AppState extends State<App> {
       theme: (isDarkTheme) ? darkTheme : lightTheme,
       home:
         //SightDetails(mocks[1]),
-        //SightListScreen(),
+        SightListScreen(),
         //MyHomePage(),
-        FiltersScreen(),
+        //FiltersScreen(),
         //SettingsScreen(),
+        //AddSightScreen(),
+        //AddScreenCategoryScreen(),
     );
   }
 }

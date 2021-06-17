@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/text_content.dart';
@@ -20,7 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(TextContent.appBarTitle[1]), //Настройки
+        title: Text(TextContent.settingTitle[0]), //Настройки
         centerTitle: true,
         titleTextStyle: Theme.of(context).textTheme.headline5,
         elevation: 0,
@@ -28,7 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         children: [
           ListTile(
-            title: Text(TextContent.settingTitle[0], style: Theme.of(context).textTheme.headline4.copyWith(fontWeight: FontWeight.w400),),  //Темная тема
+            title: Text(TextContent.settingTitle[1], style: Theme.of(context).textTheme.headline3,),  //Темная тема
             trailing: Switch(
                 value: darkTheme,
                 onChanged: (newValue) {
@@ -44,7 +42,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: Divider(),
           ),
           ListTile(
-            title: Text(TextContent.settingTitle[1], style: Theme.of(context).textTheme.headline4.copyWith(fontWeight: FontWeight.w400),), //Смотреть туториал
+            title: Text(TextContent.settingTitle[2], style: Theme.of(context).textTheme.headline3,), //Смотреть туториал
             trailing: IconButton(
               icon: Icon(Icons.info_outline),
               color: filterScreenLightColor,
@@ -59,7 +57,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(index: 2),
     );
   }
 }
